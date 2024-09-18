@@ -11,8 +11,8 @@ COPY . /app
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Expose port 8501 for Streamlit
-EXPOSE 8501
+# Expose port 8080 for Google Cloud Run
+EXPOSE 8080
 
-# Run the Streamlit app
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.enableCORS=false", "--server.enableXsrfProtection=false"]
+# Run the Streamlit app on port 8080
+CMD ["streamlit", "run", "app.py", "--server.port=8080", "--server.enableCORS=false", "--server.enableXsrfProtection=false"]
